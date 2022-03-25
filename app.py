@@ -21,8 +21,8 @@ def upload_file():
         file = request.files['file']
         print("File Received")
         filename = secure_filename(file.filename)
-        file.save("static/" + filename)
-        file = open("static/" + filename,"r")
+        file.save(filename)
+        file = open(filename,"r")
         image = Image.open(filename)
         feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224')
         model = ViTForImageClassification.from_pretrained('google/vit-base-patch16-224')
