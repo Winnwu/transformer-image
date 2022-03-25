@@ -28,7 +28,7 @@ def upload_file():
         inputs = feature_extractor(images=image, return_tensors="pt")
         outputs = model(**inputs)
         logits = outputs.logits
-        model predicts one of the 1000 ImageNet classes
+        #model predicts one of the 1000 ImageNet classes
         predicted_class_idx = logits.argmax(-1).item()
         pred = model.config.id2label[predicted_class_idx]
         #pred = "1"
